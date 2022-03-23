@@ -1,8 +1,10 @@
 package br.com.dett.dettperson.models;
 
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 public class Person {
+    private UUID id;
     private User user;
     private String firstName;
     private String lastName;

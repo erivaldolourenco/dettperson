@@ -1,15 +1,13 @@
 package br.com.dett.dettperson.models;
-
-import javax.validation.constraints.Email;
 import java.time.ZonedDateTime;
 
 public class User {
     private String username;
-    private Email email;
+    private String email;
     private String passworld;
     private ZonedDateTime lastLogin;
 
-    public User(String username, Email email, String passworld) {
+    public User(String username, String email, String passworld) {
         this.username = username;
         this.email = email;
         this.passworld = passworld;
@@ -23,11 +21,11 @@ public class User {
         this.username = username;
     }
 
-    public Email getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Email email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
