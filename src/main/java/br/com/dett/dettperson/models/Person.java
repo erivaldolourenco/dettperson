@@ -1,13 +1,28 @@
 package br.com.dett.dettperson.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
-public class Person {
+@Entity
+@Table(name="TB_PERSON")
+public class Person implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="ID_PERSON")
     private UUID id;
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name="ID_USER")
     private User user;
+    @Column(name="FIRS_NAME")
     private String firstName;
+    @Column(name="LAST_NAME")
     private String lastName;
+    @Column(name="CREATION_DATE")
     private ZonedDateTime creationDate;
 
     public Person(User user, String firstName, String lastName) {
@@ -17,6 +32,14 @@ public class Person {
         this.creationDate = ZonedDateTime.now();
     }
 
+    public Person() {
+    }
+    public UUID getId() {
+        return id;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
     public User getUser() {
         return user;
     }
