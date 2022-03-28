@@ -1,0 +1,1 @@
+INSERT INTO TB_USER(ID, USERNAME, EMAIL, PASSWORD) VALUES ('9f0c854a-d2f1-4638-9cfb-8a97e130a8b7','erivaldo', 'erivaldo@email.com', '$2a$12$0VJbnw7NkoajG1Tc9etZ/ubEI2RueIxVIb2RAFe6BItaP952js9XK');
